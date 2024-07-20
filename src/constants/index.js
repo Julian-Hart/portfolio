@@ -51,7 +51,7 @@ export const PROJECTS = [
     title: "AI Article Summarizer",
     image: project2,
     description:
-      "An AI Article Summarizer that takes in an article and returns a summary using a Summarizq API coming from RapidAPI. ",
+      "An AI Article Summarizer that takes in an article and returns a summary using a Summarizer API coming from RapidAPI. ",
     technologies: ["HTML", "CSS", "React", "Vite", "Redux", "Tailwind", "API"],
 
     github: "https://github.com/Julian-Hart/summarize_ai",

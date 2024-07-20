@@ -1,5 +1,5 @@
 import React from "react";
-import resume from "../assets/firstresume.pdf";
+import resume from "../assets/JulianHartResume.pdf";
 import { motion } from "framer-motion";
 
 const Hero = () => {
