@@ -40,7 +40,6 @@ export const PROJECTS = [
       "CSS",
       "Next.js",
       "Tailwind",
-      "API",
       "SQL",
       "Clerk",
       "Docker",
