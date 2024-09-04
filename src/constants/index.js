@@ -21,11 +21,29 @@ export const EDUCATION = [
 
 export const EXPERIENCES = [
   {
-    year: "2023 - Present",
-    role: "Senior Full Stack Developer",
-    company: "Google Inc.",
-    description: `Led a team in developing and maintaining web applications using JavaScript, React.js, and Node.js. Implemented RESTful APIs and integrated with MongoDB databases. Collaborated with stakeholders to define project requirements and timelines.`,
-    technologies: ["Javascript", "React.js", "Next.js", "mongoDB"],
+    year: "2024 - Present",
+    role: "Web Development Intern",
+    company: "University of Connecticut",
+    description: `Currently involved in refactoring the backend architecture of high-traffic university websites that are viewed by thousands of users daily. My role includes implementing and optimizing APIs to enhance site performance and reliability.
+`,
+    technologies: ["Javascript", "APIs", "WebMaster"],
+  },
+  {
+    year: "2024 - Present",
+    role: "Co Founder",
+    company: "CheckUP LLC",
+    description: `Co-founded CheckUP LLC, an app enhancing employee-employer HR communication to monitor mental health and job satisfaction, built with Next.js, Tailwind, SQL, and Clerk.
+`,
+technologies: [
+  "HTML",
+  "CSS",
+  "Next.js",
+  "TypeScript",
+  "Tailwind",
+  "Clerk",
+  "Stream",
+  "shadcn",
+]
   },
 ];
 
