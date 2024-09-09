@@ -26,7 +26,7 @@ export const EXPERIENCES = [
     company: "University of Connecticut",
     description: `Currently involved in refactoring the backend architecture of high-traffic university websites that are viewed by thousands of users daily. My role includes implementing and optimizing APIs to enhance site performance and reliability.
 `,
-    technologies: ["Javascript", "APIs", "WebMaster"],
+    technologies: ["Javascript", "APIs", "Wordpress", "HTML", "CSS"],
   },
   {
     year: "2024 - Present",
