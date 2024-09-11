@@ -42,7 +42,7 @@ technologies: [
   "Tailwind",
   "Clerk",
   "Stream",
-  "shadcn",
+  "Shadcn",
 ]
   },
 ];
@@ -81,7 +81,7 @@ export const PROJECTS = [
       "Tailwind",
       "Clerk",
       "Stream",
-      "shadcn",
+      "Shadcn",
     ],
     github: "https://github.com/Julian-Hart/Connect-Live",
     link: "https://connect-live-blush.vercel.app/",
