@@ -1,8 +1,11 @@
 import project1 from "../assets/projects/project1.png";
 import project2 from "../assets/projects/project2.png";
 import project3 from "../assets/projects/project3.png";
+import project4 from "../assets/projects/project4.png";
+import project5 from "../assets/projects/project5.png";
 
-export const ABOUT_TEXT = `Hello! My name is Julian, and I am a dedicated and versatile computer science student at the University of Connecticut specializing in full stack web development and Python. My journey in software development began with a deep curiosity for how things work and an obsession with computers and the internet, which has evolved into a passion for building impactful, user-focused software. I thrive in collaborative environments, continuously seek to learn, and enjoy solving complex problems to deliver high-quality solutions. Outside of coding, I enjoy staying active by going to the gym and climbing, exploring new technologies, and playing music.`;
+export const ABOUT_TEXT = `Hello! My name is Julian, and I am a computer science student at the University of Connecticut, concentrating in Algorithms and Theory, with a strong focus on full stack web development and Python. My passion for technology began with a curiosity about how systems work and has grown into a commitment to building impactful, user-focused software. I thrive in collaborative environments, enjoy solving complex problems, and constantly seek opportunities to learn and innovate. Outside of coding, I stay active through the gym and climbing, explore emerging technologies, and play music.`;
+
 
 export const EDUCATION = [
   {
@@ -55,7 +58,7 @@ export const EXPERIENCES = [
 export const PROJECTS = [
   {
     title: "Pneumonia Classifier",
-    image: project3,
+    image: project4,
     description:
       "A convolutional neural network (CNN) in PyTorch to detect pneumonia from chest X-ray images, deployed as a Flask API on Render.",
     technologies: [
@@ -71,7 +74,7 @@ export const PROJECTS = [
   },
   {
     title: "Encryption Library",
-    image: project3,
+    image: project5,
     description:
       "A modular encryption library in C implementing AES and RSA algorithms with efficient memory management and a CLI for file encryption/decryption.",
     technologies: ["C", "AES", "RSA", "Pointers", "Data Structures"],

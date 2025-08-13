@@ -1,14 +1,9 @@
 import React from "react";
 import { RiReactjsLine } from "react-icons/ri";
 import { TbBrandNextjs } from "react-icons/tb";
-import { SiMongodb } from "react-icons/si";
-import { DiNodejsSmall } from "react-icons/di";
-import { DiPython } from "react-icons/di";
-import { DiHtml5 } from "react-icons/di";
-import { DiCss3 } from "react-icons/di";
-import { DiJsBadge } from "react-icons/di";
-import { DiJava } from "react-icons/di";
-import { animate, easeIn, motion } from "framer-motion";
+import { SiMongodb, SiTypescript, SiRedux, SiTailwindcss, SiAmazonaws, SiGraphql, SiWordpress, SiC, SiCplusplus, SiBootstrap } from "react-icons/si";
+import { DiNodejsSmall, DiPython, DiHtml5, DiCss3, DiJsBadge, DiJava } from "react-icons/di";
+import { motion } from "framer-motion";
 
 const iconAnimation = (duration) => ({
   initial: { y: 0 },
@@ -28,78 +23,36 @@ const Technologies = () => {
     <div className="border-b border-neutral-800 pb-24">
       <h2 className="my-20 text-center text-4xl">Technologies</h2>
       <div className="flex flex-wrap items-center justify-center gap-4">
-        <motion.div
-          variants={iconAnimation(2.5)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <DiHtml5 className="text-7xl" />
-        </motion.div>
-        <motion.div
-          variants={iconAnimation(4.5)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <DiCss3 className="text-7xl" />
-        </motion.div>
-        <motion.div
-          variants={iconAnimation(3.5)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <DiJsBadge className="text-7xl" />
-        </motion.div>
-        <motion.div
-          variants={iconAnimation(2.5)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <RiReactjsLine className="text-7xl" />
-        </motion.div>
-        <motion.div
-          variants={iconAnimation(5)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <DiNodejsSmall className="text-7xl" />
-        </motion.div>
-        <motion.div
-          variants={iconAnimation(3)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <TbBrandNextjs className="text-7xl" />
-        </motion.div>
-        <motion.div
-          variants={iconAnimation(4.5)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <SiMongodb className="text-7xl" />
-        </motion.div>
-        <motion.div
-          variants={iconAnimation(4)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <DiPython className="text-7xl" />
-        </motion.div>
-        <motion.div
-          variants={iconAnimation(5.5)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <DiJava className="text-7xl" />
-        </motion.div>
+        {[
+          { icon: <DiHtml5 className="text-7xl" />, duration: 2.5 },
+          { icon: <DiCss3 className="text-7xl" />, duration: 4.5 },
+          { icon: <DiJsBadge className="text-7xl" />, duration: 3.5 },
+          { icon: <SiTypescript className="text-7xl" />, duration: 3 },
+          { icon: <RiReactjsLine className="text-7xl" />, duration: 2.5 },
+          { icon: <SiRedux className="text-7xl" />, duration: 4 },
+          { icon: <DiNodejsSmall className="text-7xl" />, duration: 5 },
+          { icon: <TbBrandNextjs className="text-7xl" />, duration: 3 },
+          { icon: <SiMongodb className="text-7xl" />, duration: 4.5 },
+          { icon: <DiPython className="text-7xl" />, duration: 4 },
+          { icon: <DiJava className="text-7xl" />, duration: 5.5 },
+          { icon: <SiC className="text-7xl" />, duration: 3.5 },
+          { icon: <SiCplusplus className="text-7xl" />, duration: 4.5 },
+          { icon: <SiTailwindcss className="text-7xl" />, duration: 3 },
+          { icon: <SiAmazonaws className="text-7xl" />, duration: 4.5 },
+          { icon: <SiGraphql className="text-7xl" />, duration: 5 },
+          { icon: <SiBootstrap className="text-7xl" />, duration: 4 },
+          { icon: <SiWordpress className="text-7xl" />, duration: 3.5 },
+        ].map((tech, index) => (
+          <motion.div
+            key={index}
+            variants={iconAnimation(tech.duration)}
+            initial="initial"
+            animate="animate"
+            className="rounded-2xl border-4 border-neutral-800 p-4"
+          >
+            {tech.icon}
+          </motion.div>
+        ))}
       </div>
     </div>
   );
