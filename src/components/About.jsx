@@ -5,37 +5,33 @@ import { motion } from "framer-motion";
 
 const About = () => {
   return (
-    <div className="border-b border-neutral-900 pb-4">
-      <h2 className="my-20 text-center text-4xl">
-        About <span className="text-neutral-500">Me</span>
-      </h2>
-      <div className="flex flex-wrap items-center">
+    <section className="py-24 border-b border-neutral-900">
+      <p className="text-xs tracking-[0.3em] uppercase text-neutral-600 mb-12">About</p>
+      <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-start">
         <motion.div
-          whileInView={{ opacity: 1, x: 0 }}
-          initial={{ x: -100, opacity: 0 }}
-          transition={{ duration: 0.5, delay: 0 }}
-          className="w-full lg:w-1/2 lg:p-8"
+          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="shrink-0"
         >
-          <div className="flex items-center justify-center">
-            <img
-              src={aboutImg}
-              alt="about"
-              className="rounded-full size-[400px]"
-            />
-          </div>
+          <img
+            src={aboutImg}
+            alt="Julian Hart"
+            className="w-40 h-40 rounded-full object-cover grayscale"
+          />
         </motion.div>
         <motion.div
-          whileInView={{ opacity: 1, x: 0 }}
-          initial={{ x: 100, opacity: 0 }}
-          transition={{ duration: 0.5, delay: 0 }}
-          className="w-full lg:w-1/2"
+          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          viewport={{ once: true }}
+          className="max-w-2xl"
         >
-          <div className="flex justify-center lg: justify-start">
-            <p className="my-2 max-w-xl">{ABOUT_TEXT}</p>
-          </div>
+          <p className="text-neutral-400 leading-relaxed text-base">{ABOUT_TEXT}</p>
         </motion.div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -4,37 +4,28 @@ import { motion } from "framer-motion";
 
 const Education = () => {
   return (
-    <div className="border-b border-neutral-900 pb-4">
-      <h2 className="my-20 text-center text-4xl">Education</h2>
-      <div>
-        {EDUCATION.map((education, index) => (
-          <div key={index} className="mb-8 flex flex-wrap lg:justify-center">
-            <motion.div
-              whileInView={{ opacity: 1, x: 0 }}
-              initial={{ x: -100, opacity: 0 }}
-              transition={{ duration: 0.5, delay: 0 }}
-              className="w-full lg:w-1/4"
-            >
-              <p className="mb-2 text-sm text-neutral-400">{education.year}</p>
-            </motion.div>
-            <motion.div
-              whileInView={{ opacity: 1, x: 0 }}
-              initial={{ x: 100, opacity: 0 }}
-              transition={{ duration: 0.5, delay: 0 }}
-              className="w-full lg:w-3/4 max-w-xl"
-            >
-              <h6 className="my-2 font-semibold">
-                {education.major} -{" "}
-                <span className="text-sm text-purple-100">
-                  {education.school}
-                </span>
-              </h6>
-              <p className="mb-4 text-neutral-400">{education.description}</p>
-            </motion.div>
-          </div>
+    <section className="py-24 border-b border-neutral-900">
+      <p className="text-xs tracking-[0.3em] uppercase text-neutral-600 mb-12">Education</p>
+      <div className="space-y-12">
+        {EDUCATION.map((edu, index) => (
+          <motion.div
+            key={index}
+            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="grid grid-cols-1 lg:grid-cols-[180px_1fr] gap-3 lg:gap-12"
+          >
+            <p className="text-sm text-neutral-600 pt-0.5">{edu.year}</p>
+            <div>
+              <h3 className="text-neutral-200 font-medium mb-1 text-sm">{edu.major}</h3>
+              <p className="text-sm text-neutral-500 mb-3">{edu.school}</p>
+              <p className="text-sm text-neutral-600 leading-relaxed">{edu.description}</p>
+            </div>
+          </motion.div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

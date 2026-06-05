@@ -1,4 +1,5 @@
 import React from "react";
+import { motion, useScroll, useSpring } from "framer-motion";
 
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
@@ -10,13 +11,22 @@ import Contact from "./components/Contact";
 import Education from "./components/Education";
 
 const App = () => {
-  return (
-    <div className="overflow-x-hidden text-neutral-300 antialiased selection:bg-cyan-300 selection:text-cyan-900">
-      <div className="fixed top-0 -z-10 h-full w-full">
-        <div className="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
-      </div>
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 120,
+    damping: 30,
+    restDelta: 0.001,
+  });
 
-      <div className="container mx-auto px-8">
+  return (
+    <div className="overflow-x-hidden text-neutral-300 antialiased selection:bg-white selection:text-black bg-neutral-950">
+      {/* Scroll progress bar */}
+      <motion.div
+        style={{ scaleX }}
+        className="fixed top-0 left-0 right-0 h-[2px] bg-white origin-left z-50"
+      />
+
+      <div className="container mx-auto px-8 max-w-5xl">
         <Navbar />
         <Hero />
         <About />

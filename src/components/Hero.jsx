@@ -4,46 +4,35 @@ import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <div className="border-b border-neutral-900 pb-4 lg:mb-35">
-      <div className="width-full flex flex-col lg:flex-row justify-center">
-        <div className="w-full lg:w-1/2 flex flex-col items-center">
-          <div className="flex flex-col items-center">
-            <motion.h1
-              initial={{ x: -100, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0 }}
-              className="pb-16 text-6xl font-thin tracking-tight lg:mt-16 lg:text-8xl"
-            >
-              Julian Hart
-            </motion.h1>
-            <motion.span
-              initial={{ x: -100, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-              className="bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-4xl tracking-tight text-transparent"
-            >
-              Software Engineer
-            </motion.span>
-            <motion.p
-              initial={{ x: -100, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 1 }}
-              className="my-2 max-w-xl py-6 font-light tracking-tighter"
-            >
-              <a
-                className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium  rounded-lg group bg-gradient-to-br from-purple-500 to-pink-300 group-hover:from-purple-500 group-hover:to-pink-300 hover:text-white text-white focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800"
-                href={resume}
-                target="_blank"
-              >
-                <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-gray-900 rounded-md group-hover:bg-opacity-0 font-thin">
-                  Resume
-                </span>
-              </a>
-            </motion.p>
+    <section className="pb-32 border-b border-neutral-900">
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+      >
+        <h1 className="text-[clamp(3.5rem,11vw,8.5rem)] font-light tracking-tight text-white leading-[0.9] mb-10">
+          Julian
+          <br />
+          Hart
+        </h1>
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
+          <div>
+            <p className="text-neutral-400 text-lg mb-1">Software Engineer</p>
+            <p className="text-neutral-600 text-sm">
+              Storrs, CT &middot; University of Connecticut
+            </p>
           </div>
+          <a
+            href={resume}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 text-sm text-neutral-500 border border-neutral-800 px-5 py-3 hover:border-neutral-500 hover:text-neutral-200 transition-all duration-200 w-fit"
+          >
+            Resume <span className="text-neutral-700">↗</span>
+          </a>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </section>
   );
 };
 

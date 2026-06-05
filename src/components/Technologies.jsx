@@ -1,60 +1,76 @@
 import React from "react";
 import { RiReactjsLine } from "react-icons/ri";
 import { TbBrandNextjs } from "react-icons/tb";
-import { SiMongodb, SiTypescript, SiRedux, SiTailwindcss, SiAmazonaws, SiGraphql, SiWordpress, SiC, SiCplusplus, SiBootstrap } from "react-icons/si";
-import { DiNodejsSmall, DiPython, DiHtml5, DiCss3, DiJsBadge, DiJava } from "react-icons/di";
-import { motion } from "framer-motion";
+import {
+  SiMongodb,
+  SiTypescript,
+  SiRedux,
+  SiTailwindcss,
+  SiAmazonaws,
+  SiGraphql,
+  SiC,
+  SiCplusplus,
+  SiDocker,
+  SiPostgresql,
+  SiFlask,
+  SiPytorch,
+} from "react-icons/si";
+import { DiNodejsSmall, DiPython, DiJsBadge, DiJava } from "react-icons/di";
 
-const iconAnimation = (duration) => ({
-  initial: { y: 0 },
-  animate: {
-    y: [5, -5],
-    transition: {
-      repeat: Infinity,
-      duration: duration,
-      ease: "linear",
-      repeatType: "reverse",
-    },
-  },
-});
+const row1 = [
+  { icon: <DiJava className="text-4xl" />, label: "Java" },
+  { icon: <DiJsBadge className="text-4xl" />, label: "JavaScript" },
+  { icon: <SiTypescript className="text-4xl" />, label: "TypeScript" },
+  { icon: <DiPython className="text-4xl" />, label: "Python" },
+  { icon: <SiC className="text-4xl" />, label: "C" },
+  { icon: <SiCplusplus className="text-4xl" />, label: "C++" },
+  { icon: <RiReactjsLine className="text-4xl" />, label: "React" },
+  { icon: <TbBrandNextjs className="text-4xl" />, label: "Next.js" },
+  { icon: <DiNodejsSmall className="text-4xl" />, label: "Node.js" },
+];
+
+const row2 = [
+  { icon: <SiRedux className="text-4xl" />, label: "Redux" },
+  { icon: <SiAmazonaws className="text-4xl" />, label: "AWS" },
+  { icon: <SiMongodb className="text-4xl" />, label: "MongoDB" },
+  { icon: <SiPostgresql className="text-4xl" />, label: "PostgreSQL" },
+  { icon: <SiTailwindcss className="text-4xl" />, label: "Tailwind" },
+  { icon: <SiGraphql className="text-4xl" />, label: "GraphQL" },
+  { icon: <SiDocker className="text-4xl" />, label: "Docker" },
+  { icon: <SiFlask className="text-4xl" />, label: "Flask" },
+  { icon: <SiPytorch className="text-4xl" />, label: "PyTorch" },
+];
+
+const IconCell = ({ icon, label }) => (
+  <div
+    className="flex flex-col items-center justify-center gap-2 w-20 h-20 border border-neutral-800 shrink-0 grayscale hover:grayscale-0 transition-all duration-300 cursor-default"
+    title={label}
+  >
+    {icon}
+  </div>
+);
 
 const Technologies = () => {
   return (
-    <div className="border-b border-neutral-800 pb-24">
-      <h2 className="my-20 text-center text-4xl">Technologies</h2>
-      <div className="flex flex-wrap items-center justify-center gap-4">
-        {[
-          { icon: <DiHtml5 className="text-7xl" />, duration: 2.5 },
-          { icon: <DiCss3 className="text-7xl" />, duration: 4.5 },
-          { icon: <DiJsBadge className="text-7xl" />, duration: 3.5 },
-          { icon: <SiTypescript className="text-7xl" />, duration: 3 },
-          { icon: <RiReactjsLine className="text-7xl" />, duration: 2.5 },
-          { icon: <SiRedux className="text-7xl" />, duration: 4 },
-          { icon: <DiNodejsSmall className="text-7xl" />, duration: 5 },
-          { icon: <TbBrandNextjs className="text-7xl" />, duration: 3 },
-          { icon: <SiMongodb className="text-7xl" />, duration: 4.5 },
-          { icon: <DiPython className="text-7xl" />, duration: 4 },
-          { icon: <DiJava className="text-7xl" />, duration: 5.5 },
-          { icon: <SiC className="text-7xl" />, duration: 3.5 },
-          { icon: <SiCplusplus className="text-7xl" />, duration: 4.5 },
-          { icon: <SiTailwindcss className="text-7xl" />, duration: 3 },
-          { icon: <SiAmazonaws className="text-7xl" />, duration: 4.5 },
-          { icon: <SiGraphql className="text-7xl" />, duration: 5 },
-          { icon: <SiBootstrap className="text-7xl" />, duration: 4 },
-          { icon: <SiWordpress className="text-7xl" />, duration: 3.5 },
-        ].map((tech, index) => (
-          <motion.div
-            key={index}
-            variants={iconAnimation(tech.duration)}
-            initial="initial"
-            animate="animate"
-            className="rounded-2xl border-4 border-neutral-800 p-4"
-          >
-            {tech.icon}
-          </motion.div>
-        ))}
+    <section className="py-24 border-b border-neutral-900">
+      <p className="text-xs tracking-[0.3em] uppercase text-neutral-600 mb-12">Technologies</p>
+      <div className="space-y-3 overflow-hidden select-none">
+        <div className="marquee-row flex overflow-hidden gap-3">
+          <div className="animate-marquee gap-3 shrink-0">
+            {[...row1, ...row1].map((t, i) => (
+              <IconCell key={i} icon={t.icon} label={t.label} />
+            ))}
+          </div>
+        </div>
+        <div className="marquee-row flex overflow-hidden gap-3">
+          <div className="animate-marquee-reverse gap-3 shrink-0">
+            {[...row2, ...row2].map((t, i) => (
+              <IconCell key={i} icon={t.icon} label={t.label} />
+            ))}
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
